@@ -22,8 +22,9 @@
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
         h1, h2 { font-family: 'TibetWildYak', sans-serif; }
         h1 { color: #2c3e50; text-align: center; margin-bottom: 5px; margin-top: 5px; }
-        h2 { border-left: 5px solid #3498db; padding-left: 10px; margin-top: 30px; }
+        h2 { border-left: 5px solid #3498db; padding-left: 10px; margin-top: 5px; }
         
+        .tibet-header { display: block; font-size: 0.9em; color: #2980b9; margin-bottom: -5px; font-family: 'TibetWildYak'; }
         .tibet-main-title { display: block; text-align: center; font-size: 1.5em; color: #2980b9; font-weight: bold; margin-bottom: 5px; font-family: 'TibetWildYak'; }
         
         .browser-tip { display: flex; justify-content: center; gap: 20px; color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px; border-top: 1px dashed #ccc; padding-top: 10px; }
@@ -44,10 +45,10 @@
         .tutorial-container { display: flex; gap: 20px; padding: 15px; border-top: 1px solid #eee; background: white; border-radius: 0 0 8px 8px; }
         .step-title { font-weight: bold; color: #e67e22; margin-top: 10px; display: block; }
 
-        /* 免责声明：左藏右汉布局 */
+        /* 免责声明及教程布局 */
         .disclaimer-card { background-color: #fff5f5; border: 1px solid #feb2b2; padding: 20px; border-radius: 12px; margin-top: 20px; }
         .disclaimer-header { display: block; text-align: center; color: #c53030; font-weight: bold; font-family: 'TibetWildYak'; margin-bottom: 15px; border-bottom: 1px solid #feb2b2; padding-bottom: 10px; }
-        .disclaimer-body { display: flex; gap: 20px; }
+        .disclaimer-body, .tutorial-body { display: flex; gap: 20px; width: 100%; }
         .lang-column { flex: 1; font-size: 0.88em; color: #742a2a; line-height: 1.7; }
         .lang-tibet { font-family: 'TibetWildYak'; border-right: 1px solid #feb2b2; padding-right: 15px; text-align: left; }
         .lang-chinese { text-align: left; padding-left: 5px; }
@@ -57,7 +58,7 @@
         @media (max-width: 600px) {
             .btn-group { flex-direction: column; }
             .btn { min-width: 100%; }
-            .tutorial-container, .disclaimer-body { flex-direction: column; }
+            .disclaimer-body, .tutorial-body { flex-direction: column; }
             .lang-tibet { border-right: none; border-bottom: 1px dashed #feb2b2; padding-right: 0; padding-bottom: 15px; }
         }
     </style>
@@ -73,7 +74,8 @@
     </div>
 
     <div class="card">
-        <h2>🤖 安卓手机版</h2>
+        <span class="tibet-header">🤖 ཨན་དྲོལ་ཁ་པར་ནང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས།</span>
+        <h2>安卓手机版 (Android)</h2>
         <div class="btn-group">
             <a href="https://github.com/kangba1376/kham-converter/releases/download/v2026.03.02/Himalaya2Pandi_Android.apk" class="btn btn-android">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
@@ -87,20 +89,23 @@
         <details>
             <summary>安卓安装指南</summary>
             <div class="tutorial-container">
-                <div class="lang-column lang-tibet">
-                    <span class="step-title">༡. ཆོག་མཆན་སྤྲོད་པ།</span> མཉེན་ཆས་ཕབ་ལེན་བྱེད་སྐབས་ [ཆོག་མཆན་སྤྲོད་པ་] འདེམས་དགོས།<br>
-                    <span class="step-title">༢. དྭངས་གཙང་མ་ལག་སྒོ་རྒྱག་པ།</span> [སྒྲིག་བཀོད་] -> [དྭངས་གཙང་མ་ལག་] ནང་དུ་འཛུལ་ནས་སྒོ་རྒྱག་དགོས།
-                </div>
-                <div class="lang-column lang-chinese">
-                    <span class="step-title">1. 允许安装</span> 下载时若提示风险，请务必选择“允许”或“仍然安装”。<br>
-                    <span class="step-title">2. 关闭纯净模式</span> 华为等手机需在设置中退出“纯净模式”方可正常安装。
+                <div class="tutorial-body">
+                    <div class="lang-column lang-tibet">
+                        <span class="step-title">༡. ཆོག་མཆན་སྤྲོད་པ།</span> མཉེན་ཆས་ཕབ་ལེན་བྱེད་སྐབས་ [ཆོག་མཆན་སྤྲོད་པ་] འདེམས་དགོས།<br>
+                        <span class="step-title">༢. དྭངས་གཙང་མ་ལག་སྒོ་རྒྱག་པ།</span> [སྒྲིག་བཀོད་] -> [དྭངས་གཙང་མ་ལག་] ནང་དུ་འཛུལ་ནས་སྒོ་རྒྱག་དགོས།
+                    </div>
+                    <div class="lang-column lang-chinese">
+                        <span class="step-title">1. 允许安装</span> 下载时若提示风险，请务必选择“允许”或“仍然安装”。<br>
+                        <span class="step-title">2. 关闭纯净模式</span> 华为等手机需在设置中退出“纯净模式”方可正常安装。
+                    </div>
                 </div>
             </div>
         </details>
     </div>
 
     <div class="card">
-        <h2>🍎 苹果电脑版</h2>
+        <span class="tibet-header">🍎 Apple ཀུ་ཤུ་གློག་ཀླད་ནང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས།</span>
+        <h2>苹果电脑版 (macOS)</h2>
         <div class="btn-group">
             <a href="https://github.com/kangba1376/kham-converter/releases/download/v2026.03.02/Himalaya2Pandi_Mac.dmg" class="btn" style="background:#34495e;">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
@@ -111,10 +116,26 @@
                 班智达 >> 喜马拉雅 下载
             </a>
         </div>
+        <details>
+            <summary>苹果安装指南</summary>
+            <div class="tutorial-container">
+                <div class="tutorial-body">
+                    <div class="lang-column lang-tibet">
+                        <span class="step-title">༡. འདྲུད་ནས་སྒྲིག་འཇུག།</span> DMG ཡིག་ཆ་ཁ་ཕྱེ་རྗེས་མཉེན་ཆས་དེ་ Application ཡིག་སྣོད་ནང་དུ་འདྲུད་དགོས།<br>
+                        <span class="step-title">༢. བདེ་འཇགས་ཆོག་མཆན།</span> གལ་ཏེ་ཁ་མི་ཕྱེ་ན། [མ་ལག་སྒྲིག་བཀོད་] -> [བདེ་འཇགས་དང་གསང་དོན་] ནང་ནས་ [མུ་མཐུད་ཁ་ཕྱེ་བ་] འདེམས་དགོས།
+                    </div>
+                    <div class="lang-column lang-chinese">
+                        <span class="step-title">1. 拖拽安装</span> 打开 DMG 后，将软件图标拖入 Applications 文件夹。<br>
+                        <span class="step-title">2. 授权运行</span> 若提示无法打开，请在“系统设置”->“隐私与安全性”中点击“仍要打开”。
+                    </div>
+                </div>
+            </div>
+        </details>
     </div>
 
     <div class="card">
-        <h2>💻 电脑版 (64位)</h2>
+        <span class="tibet-header">💻 Windows སྒེའུ་ཁུང་མ་ལག་སྟེང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས།</span>
+        <h2>Windows 电脑版 (64位)</h2>
         <div class="btn-group">
             <a href="https://github.com/kangba1376/kham-converter/releases/download/v2026.03.02/Himalaya2Pandi_Win.exe" class="btn">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
