@@ -5,18 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>藏文转换工具 - 康巴仓出品</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h1 { color: #2c3e50; text-align: center; }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 5px; }
         h2 { border-left: 5px solid #3498db; padding-left: 10px; margin-top: 30px; }
+        .platform-info { font-size: 0.9em; color: #7f8c8d; margin-top: -5px; margin-bottom: 10px; }
         .btn-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .btn { display: inline-block; padding: 12px 20px; background: #3498db; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; }
+        .btn { display: inline-block; padding: 12px 20px; background: #3498db; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; cursor: pointer; border:none; }
         .btn:hover { background: #2980b9; }
         .btn-android { background: #2ecc71; }
         .btn-android:hover { background: #27ae60; }
-        .notice { background: #fff3cd; border-left: 5px solid #ffecb5; padding: 15px; border-radius: 4px; font-size: 0.9em; margin-top:15px; }
-        .tibet { font-size: 1.1em; margin-bottom: 10px; color: #2980b9; }
-        .lang-section { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        
+        /* 教程折叠样式 */
+        details { background: #f9f9f9; border-radius: 8px; margin-top: 20px; border: 1px solid #eee; }
+        summary { padding: 15px; cursor: pointer; font-weight: bold; color: #34495e; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "➕ 点击展开教程 / ལག་ལེན་སྟོན་པ།"; font-size: 0.8em; background: #3498db; color: white; padding: 4px 10px; border-radius: 4px; }
+        details[open] summary::after { content: "➖ 点击收起 / སྒོ་རྒྱག་པ།"; background: #e74c3c; }
+
+        /* 左右对照布局 */
+        .tutorial-container { display: flex; gap: 20px; padding: 15px; border-top: 1px solid #eee; background: white; border-radius: 0 0 8px 8px; }
+        .lang-column { flex: 1; min-width: 0; }
+        .lang-tibet { text-align: left; color: #2980b9; font-size: 1.05em; border-right: 1px solid #eee; padding-right: 15px; }
+        .lang-chinese { text-align: left; color: #444; font-size: 0.95em; padding-left: 5px; }
+        
+        .step-title { font-weight: bold; color: #e67e22; margin-top: 10px; display: block; }
+        .chip-tag { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; color: #555; }
+        
+        @media (max-width: 600px) {
+            .tutorial-container { flex-direction: column; }
+            .lang-tibet { border-right: none; border-bottom: 1px dashed #ccc; padding-bottom: 15px; padding-right: 0; }
+        }
     </style>
 </head>
 <body>
@@ -31,41 +50,82 @@
             <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Himalaya2Pandi_Android.apk" class="btn btn-android">喜马拉雅 ⇄ 班智达 下载</a>
             <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Pandi2Himalaya_Android.apk" class="btn btn-android">班智达 ⇄ 喜马拉雅 下载</a>
         </div>
-        
-        <div class="notice">
-            <strong>⚠️ 安装必读 (重要)：</strong><br>
-            1. <strong>关闭纯净模式</strong>：针对华为/荣耀手机，请在 [设置]-[系统和更新]-[纯净模式] 中选择关闭。<br>
-            2. <strong>信任来源</strong>：若安装时提示“风险”，请点击“了解风险”并选择“仍然安装”。<br>
-            3. <strong>微信下载注意</strong>：若在微信中打开，后缀可能变为 .apk.1，请在文件管理中重命名删掉末尾的 .1 即可。
+
+        <details>
+            <summary>安卓手机安装特别说明</summary>
+            <div class="tutorial-container">
+                <div class="lang-column lang-tibet">
+                    <strong>ཨན་དྲོལ་ཁ་པར་ནང་འཇུག་སྟངས་ཀྱི་གསལ་བཤད།</strong><br><br>
+                    <span class="step-title">རིམ་པ་དང་པོ། “དྭངས་གཙང་མ་ལག་” སྒོ་རྒྱག་པ།</span>
+                    ཁ་པར་གྱི་ [སྒྲིག་བཀོད་] -> [མ་ལག་དང་གསར་སྒྱུར་] -> [དྭངས་གཙང་མ་ལག་] ནང་དུ་འཛུལ་ནས། [ཕྱིར་འཐེན་] སྟེང་དུ་ནོན་ནས་སྒོ་རྒྱག་དགོས།<br><br>
+                    <span class="step-title">རིམ་པ་གཉིས་པ། “ཡོང་ཁུངས་མི་གསལ་བའི་མཉེན་ཆས་” ལ་ཆོག་མཆན་སྤྲོད་པ།</span>
+                    “བདེ་འཇགས་ཆེད་འདི་ནས་ཕབ་ལེན་བྱས་པའི་མཉེན་ཆས་འཇུག་མི་ཆོག་”ཅེས་པའི་རྟགས་ཐོན་ཚེ། དེའི་སྟེང་གི་ [སྒྲིག་བཀོད་] ནོན་ནས་བེད་སྤྱོད་གཏོང་བཞིན་པའི་བཤར་ཆས་ལ་ཆོག་མཆན་སྤྲོད་དགོས།<br><br>
+                    <span class="step-title">རིམ་པ་གསུམ་པ། བདེ་འཇགས་ཉེན་བརྡར་མ་འཛེམས་པར་མུ་མཐུད་འཇུག་པ།</span>
+                    [ཉེན་ཁ་ཤེས་རྟོགས་] ནོན་ནས་ [མུ་མཐུད་འཇུག་པ་] ཞེས་པ་དེ་འདེམས་དགོས།<br><br>
+                    <span class="step-title">རིམ་པ་བཞི་པ། ཡིག་ཆའི་མཇུག་མིང་བཅོས་ཐབས།</span>
+                    སྐད་འཕྲིན་ནང་ནས་ཕབ་ལེན་བྱས་ཚེ་མཇུག་མིང་ .apk.1 ལ་འགྱུར་སྲིད། [ཡིག་ཆ་བདག་གཉེར་] ནང་དུ་སོང་ནས་མཇུག་གི་ .1 བསུབས་ནས་ .apk ལ་བཟོས་རྗེས་འཇུག་ཐུབ།
+                </div>
+                <div class="lang-column lang-chinese">
+                    <strong>安卓手机（华为/小米等）安装特别说明</strong><br><br>
+                    <span class="step-title">第一步：关闭“纯净模式” (针对华为/荣耀用户)</span>
+                    进入手机 [设置] -> [系统和更新] -> [纯净模式]。点击 [退出] 或 [关闭]。<br><br>
+                    <span class="step-title">第二步：开启“安装未知应用”权限</span>
+                    当弹出“为了安全，禁止安装来自此来源的应用”时，点击 [设置]，将当前下载工具的开关打开。<br><br>
+                    <span class="step-title">第三步：无视安全风险提示</span>
+                    请点击底部的 [了解风险] 或 [更多内容]，然后选择 [仍然安装] 或 [继续安装]。<br><br>
+                    <span class="step-title">第四步：文件后缀名修复</span>
+                    如果在微信里下载，后缀可能变为 .apk.1。请在 [文件管理] 中重命名删掉末尾的 .1，确保后缀名为 .apk 再安装。
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <div class="card">
+        <h2>🍎 苹果电脑版 (macOS)</h2>
+        <p class="tibet">适用芯片：M1/M2/M3/M4 与 Intel 芯片通用</p>
+        <div class="btn-group">
+            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Himalaya2Pandi_Mac.dmg" class="btn" style="background:#34495e;">喜马拉雅 ⇄ 班智达 下载</a>
+            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Pandi2Himalaya_Mac.dmg" class="btn" style="background:#34495e;">班智达 ⇄ 喜马拉雅 下载</a>
         </div>
+
+        <details>
+            <summary>macOS 软件安装运行指南</summary>
+            <div class="tutorial-container">
+                <div class="lang-column lang-tibet">
+                    <strong>macOS མཉེན་ཆས་སྒྲིག་འཇུག་དང་བེད་སྤྱོད་ཀྱི་ལམ་སྟོན།</strong><br><br>
+                    <span class="step-title">དང་པོ། “ཁ་ཕྱེ་མི་ཐུབ་པའམ་སྐྱོན་ཅན་” སེལ་ཐབས།</span>
+                    ཀུ་ཤུའི་རྟགས་ () -> 【རྒྱུད་ཁོངས་སྒྲིག་བཀོད་】 -> 【གསང་དོན་དང་ཉེན་འཁོར་མེད་པ།】 -> འོག་ཏུ་དྲུད་ནས་ “‘xxx’ བཟོ་མཁན་ངོས་འཛིན་མི་ཐུབ་པས་བཀག་ཡོད།” འགྲམ་གྱི་ 【མུ་མཐུད་ཁ་ཕྱེ་】 གནོན།<br><br>
+                    <span class="step-title">གཉིས་པ། “ཙིག་རྟགས་གཡས་གནོན་” ཐབས་ལམ།</span>
+                    【Finder】 ནང་གི་ 【Applications】 ནང་འཛུལ་ནས་མཉེན་ཆས་ཐོག་ Control མཐེབ་གནོན་བཞིན་ཙིག་རྟགས་གཡས་གནོན་བྱས་ཏེ་ 【ཁ་ཕྱེ་】 (Open) བདམས། འདི་ལྟར་ཐེངས་གཅིག་བྱས་ན་ཆོག<br><br>
+                    <span class="step-title">གསུམ་པ། M རྟགས་ཅན་གྱི་ལྟེ་བར་དྲན་སྐུལ།</span>
+                    གལ་ཏེ་མཉེན་ཆས་ཁ་ཕྱེ་མ་ཐག་བརྒྱབ་ན། 【Show Info】 ནང་འཛུལ་ནས་ “Rosetta བེད་སྤྱོད་བྱས་ནས་ཁ་ཕྱེ་” ཞེས་པ་དེར་རྟགས་རྒྱག་དགོས།
+                </div>
+                <div class="lang-column lang-chinese">
+                    <strong>macOS 软件安装运行指南 (支持 M1-M4)</strong><br><br>
+                    <span class="step-title">一、 解决“无法打开”或“文件损坏”</span>
+                    点击左上角 () -> [系统设置] -> [隐私与安全性]。向下滑动找到“仍要打开”按钮，点击并输入开机密码确认。<br><br>
+                    <span class="step-title">二、 “万能右键法”（推荐）</span>
+                    在 [应用程序] 文件夹中，按住键盘 Control 键的同时点鼠标右键选择 [打开]。在弹出对话框中再次点 [打开] 即可信任。<br><br>
+                    <span class="step-title">三、 M 系列芯片闪退处理</span>
+                    右键点击软件选择 [显示简介]，勾选 “使用 Rosetta 打开”。（如无此选项则无需操作）。
+                </div>
+            </div>
+        </details>
     </div>
 
     <div class="card">
         <h2>💻 电脑版 (Windows)</h2>
+        <p class="tibet">适用：64位 英特尔(Intel) / AMD 通用</p>
         <div class="btn-group">
-            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Himalaya2Pandi_Win.exe" class="btn">喜马拉雅 ⇄ 班智达 (Win)</a>
-            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Pandi2Himalaya_Win.exe" class="btn">班智达 ⇄ 喜马拉雅 (Win)</a>
+            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Himalaya2Pandi_Win.exe" class="btn">喜马拉雅 ⇄ 班智达 下载</a>
+            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Pandi2Himalaya_Win.exe" class="btn">班智达 ⇄ 喜马拉雅 下载</a>
         </div>
     </div>
 
-    <div class="card">
-        <h2>🍎 苹果电脑版 (Mac)</h2>
-        <div class="btn-group">
-            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Himalaya2Pandi_Mac.dmg" class="btn" style="background:#34495e;">喜马拉雅 ⇄ 班智达 (Mac)</a>
-            <a href="https://github.com/kangba1376/kham-converter/releases/download/20260302/Pandi2Himalaya_Mac.dmg" class="btn" style="background:#34495e;">班智达 ⇄ 喜马拉雅 (Mac)</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>📜 免责声明与防病毒说明</h2>
-        <div class="lang-section">
-            <strong>汉语版：</strong><br>
-            本软件由“康巴仓”个人开发，旨在服务藏文爱好者，纯净无毒，不收集任何隐私。软件完全免费，请放心使用。
-        </div>
-        <div class="lang-section" style="border:none;">
-            <strong>བོད་ཡིག་གསལ་བཤད།</strong><br>
-            མཉེན་ཆས་འདི་ནི་ཁམས་པ་ཚང་གིས་རིན་མེད་དུ་བཟོས་པ་ཞིག་ཡིན། འདིའི་ནང་དུ་ནད་དུག་དང་གསང་མྱུལ་གྱི་རིགས་གང་ཡང་མེད་པས་སེམས་བདེ་མོ་བྱས་ནས་བེད་སྤྱོད་གཏོང་རོགས།
-        </div>
+    <div class="card" style="text-align: center;">
+        <h2>📜 免责声明</h2>
+        <p>本软件由“康巴仓”个人开发，旨在服务藏文爱好者，纯净无毒，不收集隐私。完全免费。</p>
+        <p class="tibet">མཉེན་ཆས་འདི་ནི་ཁམས་པ་ཚང་གིས་རིན་མེད་དུ་བཟོས་པ་ཞིག་ཡིན། འདིའི་ནང་དུ་ནད་དུག་དང་གསང་མྱུལ་མེད་པས་སེམས་བདེ་མོ་བྱས་ནས་བེད་སྤྱོད་གཏོང་རོགས།</p>
     </div>
 
 </body>
