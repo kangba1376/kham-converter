@@ -28,8 +28,12 @@
         .tibet-header { display: block; font-size: 0.9em; color: #2980b9; margin-bottom: -5px; font-family: 'TibetWildYak'; }
         .tibet-main-title { display: block; text-align: center; font-size: 1.5em; color: #2980b9; font-weight: bold; margin-bottom: 5px; font-family: 'TibetWildYak'; }
         
-        .browser-tip { display: flex; justify-content: center; gap: 20px; color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px; border-top: 1px dashed #ccc; padding-top: 10px; }
-        .browser-tip span:first-child { font-family: 'TibetWildYak'; }
+        .browser-tip { text-align: center; color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px; border-top: 1px dashed #ccc; padding-top: 10px; }
+        
+        /* 严格按要求：藏文在上，汉语在下 */
+        .update-simple { text-align: center; margin-bottom: 20px; font-size: 1em; line-height: 1.8; }
+        .update-simple-tibet { color: #2980b9; font-family: 'TibetWildYak'; display: block; }
+        .update-simple-zh { color: #333; display: block; }
 
         .platform-info { font-size: 0.9em; color: #7f8c8d; margin-top: 5px; margin-bottom: 10px; }
         .btn-group { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px; }
@@ -51,7 +55,6 @@
         .lang-chinese { text-align: left; color: #444; font-size: 0.95em; padding-left: 5px; }
         .step-title { font-weight: bold; color: #e67e22; margin-top: 10px; display: block; }
         
-        /* 修改后的页脚样式：颜色蓝色，字号缩小 */
         footer { 
             text-align: center; 
             padding: 25px 15px; 
@@ -64,7 +67,6 @@
         @media (max-width: 600px) {
             .tutorial-container { flex-direction: column; }
             .lang-tibet { border-right: none; border-bottom: 1px dashed #ccc; padding-bottom: 15px; padding-right: 0; }
-            .browser-tip { flex-direction: column; align-items: center; gap: 5px; }
         }
     </style>
 </head>
@@ -74,19 +76,23 @@
     <h1 style="text-align: center;">康巴仓藏文转换工具</h1>
 
     <div class="browser-tip">
-        <span>⚠️ ཡིན་གཅིག་དང་ཡོད་ཀྱི་དྲྭ་བཤེར་བཤར་ཆས་ཐོག་ནས་ཁ་ཕྱེ་རོགས།</span>
-        <span> 请务必使用默认浏览器打开 ⚠️</span>
+        <span>⚠️ ཡིན་གཅིག་དང་ཡོད་ཀྱི་དྲྭ་བཤེར་བཤར་ཆས་ཐོག་ནས་ཁ་ཕྱེ་རོགས། 请务必使用默认浏览器打开 ⚠️</span>
+    </div>
+
+    <div class="update-simple">
+        <span class="update-simple-tibet">པར་གཞི་གསར་བསྒྱུར། ༢༠༢༦-༣-༦ པ་ཤར་གཏོང་ཞུས་ཡོད། (སྐྱོན་ཆ་ཁག་ཅིག་བཅོས་སྒྲིག་བྱས།)</span>
+        <span class="update-simple-zh">更新版 2026-3-6 已上线 (修复已知BUG)</span>
     </div>
 
     <div class="card">
         <span class="tibet-header">ཨན་དྲོལ་ཁ་པར་ནང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས། (Android)</span>
         <h2>🤖 安卓手机版</h2>
         <div class="btn-group">
-            <a href="https://www.123865.com/s/wu2Kvd-ACaoH" class="btn btn-android">
+            <a href="https://www.123865.com/s/wu2Kvd-3OaoH?pwd=PDdn" class="btn btn-android" target="_blank">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
                 喜马拉雅 >> 班智达 下载
             </a>
-            <a href="https://www.123865.com/s/wu2Kvd-9CaoH" class="btn btn-android">
+            <a href="https://www.123865.com/s/wu2Kvd-vOaoH?pwd=gsvx" class="btn btn-android" target="_blank">
                 <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན།</span>
                 班智达 >> 喜马拉雅 下载
             </a>
@@ -102,7 +108,7 @@
                     <span class="step-title">རིམ་པ་གཉིས་པ། “དྭངས་གཙང་མ་ལག་” སྒོ་རྒྱག་པ།</span>
                     ཁ་པར་གྱི་ [སྒྲིག་བཀོད་] -> [མ་ལག་དང་གསར་སྒྱུར་] -> [དྭངས་གཙང་མ་ལག་] ནང་དུ་འཛུལ་ནས། [ཕྱིར་འཐེན་] སྟེང་དུ་ནོན་ནས་སྒོ་རྒྱག་དགོས།<br><br>
                     <span class="step-title">རིམ་པ་གསུམ་པ། བདེ་འཇགས་ཉེན་བརྡར་མ་འཛེམས་པར་མུ་མཐུད་འཇུག་པ།</span>
-                    “བདེ་འཇགས་མིན་པའི་ཉེན་བརྡ་” ཐོན་ཚེ། [ཉེན་ཁ་ཤེས་རྟོགས་] ནོན་ནས་ [མུ་མཐུད་འཇུག་པ་] ཞེས་པ་དེ་འདེམས་དགོས།<br><br>
+                    “བདེ་འཇགས་མིན་པའི་ཉེན་བརྡ་” ཐོན་ཚེ། [ཉེན་ཁ་ཤེས་རྟོགས་] ནོན་ནས་ [མུ་མཐུད་འཇུག་པ་] ཞེས་པ་དེ་འདེམས་དགོས。<br><br>
                     <span class="step-title">རིམ་པ་བཞི་པ། ཡིག་ཆའི་མཇུག་མིང་བཅོས་ཐབས།</span>
                     སྐད་འཕྲིན་ནང་ནས་ཕབ་ལེན་བྱས་ཚེ་མཇུག་མིང་ .apk.1 ལ་འགྱུར་སྲིད། [ཡིག་ཆ་ bདག་གཉེར་] ནང་དུ་སོང་ནས་མཇུག་གི་ .1 བསུབས་ནས་ .apk ལ་བཟོས་རྗེས་འཇུག་ཐུབ།
                 </div>
@@ -126,11 +132,11 @@
         <h2>🍎 苹果电脑版</h2>
         <div class="platform-info">M1/M2/M3/M4 དང་ Intel གློག་ཀླད་ཡོངས་ལ་སྤྱོད་ཆོག / 支持 M1-M4 及 Intel</div>
         <div class="btn-group">
-            <a href="https://www.123865.com/s/wu2Kvd-HCaoH" class="btn" style="background:#34495e;">
+            <a href="https://www.123865.com/s/wu2Kvd-dOaoH?pwd=oHGf" class="btn" style="background:#34495e;" target="_blank">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
                 喜马拉雅 >> 班智达 下载
             </a>
-            <a href="https://www.123865.com/s/wu2Kvd-hCaoH" class="btn" style="background:#34495e;">
+            <a href="https://www.123865.com/s/wu2Kvd-hOaoH?pwd=oJfz" class="btn" style="background:#34495e;" target="_blank">
                 <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན།</span>
                 班智达 >> 喜马拉雅 下载
             </a>
@@ -166,12 +172,12 @@
         <h2>💻 电脑版 (64位)</h2>
         <div class="platform-info">适用：64位 英特尔(Intel) / AMD 通用 / Intel དང་ AMD ཡོངས་ལ་སྤྱོད་ཆོག</div>
         <div class="btn-group">
-            <a href="https://www.123865.com/s/wu2Kvd-ECaoH" class="btn">
-                <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
+            <a href="https://www.123865.com/s/wu2Kvd-jNaoH?pwd=Z4AF" class="btn" target="_blank">
+                <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན། (ZIP)</span>
                 喜马拉雅 >> 班智达 下载
             </a>
-            <a href="https://www.123865.com/s/wu2Kvd-QCaoH" class="btn">
-                <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན།</span>
+            <a href="https://www.123865.com/s/wu2Kvd-TOaoH?pwd=65Gb" class="btn" target="_blank">
+                <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན། (ZIP)</span>
                 班智达 >> 喜马拉雅 下载
             </a>
         </div>
