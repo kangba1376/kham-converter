@@ -22,32 +22,39 @@
             background-color: #f4f7f6; 
         }
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .platform-card { border: 1px solid #8b0000; border-top: 6px solid #8b0000; border-radius: 14px; }
+        .disclaimer-card { border: 1px solid #8b0000; border-top: 6px solid #8b0000; border-radius: 14px; }
         h1, h2 { font-family: 'TibetWildYak', sans-serif; }
-        h1 { color: #2c3e50; text-align: center; margin-bottom: 5px; margin-top: 5px; }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 5px; margin-top: 5px; font-size: 1.4em; font-weight: bold; }
         h2 { border-left: 5px solid #3498db; padding-left: 10px; margin-top: 30px; }
         
         .tibet-header { display: block; font-size: 0.9em; color: #2980b9; margin-bottom: -5px; font-family: 'TibetWildYak'; }
-        .tibet-main-title { display: block; text-align: center; font-size: 1.5em; color: #2980b9; font-weight: bold; margin-bottom: 5px; font-family: 'TibetWildYak'; }
+        .tibet-main-title { display: block; text-align: center; font-size: 1.6em; color: #2980b9; font-weight: bold; margin-bottom: 5px; font-family: 'TibetWildYak'; }
+        .title-divider { height: 1px; background: #0b3b8a; border-radius: 1px; width: 86%; margin: 14px auto 12px auto; }
         
-        .browser-tip { text-align: center; color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px; border-top: 1px dashed #ccc; padding-top: 10px; }
+        .browser-tip { text-align: center; color: #0b3b8a; font-size: 0.95em; font-weight: bold; margin: 0 0 20px 0; padding: 0; background: transparent; border: none; box-shadow: none; }
         
-        .update-simple { text-align: center; margin-bottom: 20px; font-size: 1em; line-height: 1.8; }
-        .update-simple-tibet { color: #2980b9; font-family: 'TibetWildYak'; display: block; }
-        .update-simple-zh { color: #333; display: block; }
+        .update-simple { text-align: center; margin-bottom: 20px; font-size: 0.82em; line-height: 1.5; color: #8b0000; }
+        .update-simple-tibet { color: #8b0000; font-family: 'TibetWildYak'; display: block; }
+        .update-simple-zh { color: #8b0000; display: block; margin-top: 8px; }
 
         .platform-info { font-size: 0.9em; color: #7f8c8d; margin-top: 5px; margin-bottom: 10px; }
         .btn-group { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px; }
         .btn { display: inline-block; padding: 10px 18px; background: #3498db; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; cursor: pointer; border:none; text-align: center; line-height: 1.4; }
         .btn span { display: block; font-size: 1em; font-weight: normal; margin-bottom: 2px; font-family: 'TibetWildYak'; }
         .btn:hover { background: #2980b9; }
-        .btn-android { background: #2ecc71; }
-        .btn-android:hover { background: #27ae60; }
+        .btn-android { background: #374151; }
+        .btn-android:hover { background: #1f2937; }
+        .btn-mac { background: #1f6b4d; }
+        .btn-mac:hover { background: #15513a; }
+        .btn-win { background: #0b3b8a; }
+        .btn-win:hover { background: #082c67; }
         
         details { background: #f9f9f9; border-radius: 8px; margin-top: 20px; border: 1px solid #eee; }
-        summary { padding: 15px; cursor: pointer; font-weight: bold; color: #34495e; list-style: none; display: flex; justify-content: space-between; align-items: center; font-family: 'TibetWildYak', sans-serif; }
+        summary { padding: 15px; cursor: pointer; font-weight: bold; color: #0b3b8a; list-style: none; display: flex; justify-content: space-between; align-items: center; font-family: 'TibetWildYak', sans-serif; }
         summary::-webkit-details-marker { display: none; }
         summary::after { content: "➕ ནང་འཇུག་བཟོ་སྟངས། / 点击展开教程"; font-size: 0.8em; background: #3498db; color: white; padding: 4px 10px; border-radius: 4px; }
-        details[open] summary::after { content: "➖ ཡར་སྐུམས། / 点击收起"; background: #e74c3c; }
+        details[open] summary::after { content: "➖ ཡར་སྐུམས། / 点击收起"; background: #3498db; }
 
         .tutorial-container { display: flex; gap: 20px; padding: 15px; border-top: 1px solid #eee; background: white; border-radius: 0 0 8px 8px; }
         .lang-column { flex: 1; min-width: 0; }
@@ -74,27 +81,28 @@
 </head>
 <body>
 
-    <span class="tibet-main-title">ཁམས་པ་ཚང་བོད་ཡིག་ཨང་བསྒྱུར་མཉེན་ཆས།</span>
-    <h1 style="text-align: center;">康巴仓藏文转换工具</h1>
+    <span class="tibet-main-title">ཁམས་པ་ཚང་བོད་ཡིག་ཨང་བསྒྱུར།</span>
+    <h1>康巴仓藏文转换</h1>
+    <div class="title-divider"></div>
 
     <div class="browser-tip">
         <span>⚠️ ཡིན་གཅིག་དང་ཡོད་ཀྱི་དྲྭ་བཤེར་བཤར་ཆས་ཐོག་ནས་ཁ་ཕྱེ་རོགས། 请务必使用默认浏览器打开 ⚠️</span>
     </div>
 
     <div class="update-simple">
-        <span class="update-simple-tibet">པར་གཞི་གསར་བསྒྱུར། ༢༠༢༦-༣-༡༡ པ་ཤར་གཏོང་ཞུས་ཡོད། (འཆར་ངོས་ལེགས་བཅོས་དང་སྐྱོན་ཆ་ཁག་ཅིག་བཅོས་སྒྲིག་བྱས།)</span>
-        <span class="update-simple-zh">更新版 2026-3-11 已上线 (界面优化与修复BUG)</span>
+        <span class="update-simple-tibet">པར་གཞི་གསར་བསྒྱུར། ༢༠༢༦-༣-༡༥ པ་ཤར་གཏོང་ཞུས་ཡོད། (འཆར་ངོས་ལེགས་བཅོས་དང་སྐྱོན་ཆ་ཁག་ཅིག་བཅོས་སྒྲིག་བྱས།)</span>
+        <span class="update-simple-zh">更新版 2026-3-15 已上线 (界面优化与修复BUG)</span>
     </div>
 
-    <div class="card">
+    <div class="card platform-card">
         <span class="tibet-header">ཨན་དྲོལ་ཁ་པར་ནང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས། (Android)</span>
-        <h2> 安卓手机版</h2>
+        <h2>🤖 安卓手机版（安卓/鸿蒙通用）</h2>
         <div class="btn-group">
-            <a href="https://www.123865.com/s/wu2Kvd-JDaoH" class="btn btn-android" target="_blank">
+            <a href="https://www.123865.com/s/wu2Kvd-m8aoH" class="btn btn-android" target="_blank">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
                 喜马拉雅 >> 班智达 下载
             </a>
-            <a href="https://www.123865.com/s/wu2Kvd-IDaoH" class="btn btn-android" target="_blank">
+            <a href="https://www.123865.com/s/wu2Kvd-18aoH" class="btn btn-android" target="_blank">
                 <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན།</span>
                 班智达 >> 喜马拉雅 下载
             </a>
@@ -129,16 +137,16 @@
         </details>
     </div>
 
-    <div class="card">
+    <div class="card platform-card">
         <span class="tibet-header">Apple ཀུ་ཤུ་གློག་ཀླད་ནང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས། (macOS)</span>
-        <h2>🍎 苹果电脑版</h2>
+        <h2>🍎 苹果电脑版（M 系 / Intel 通用）</h2>
         <div class="platform-info">M1/M2/M3/M4 དང་ Intel གློག་ཀླད་ཡོངས་ལ་སྤྱོད་ཆོག / 支持 M1-M4 及 Intel</div>
         <div class="btn-group">
-            <a href="https://www.123865.com/s/wu2Kvd-aDaoH" class="btn" style="background:#34495e;" target="_blank">
+            <a href="https://www.123865.com/s/wu2Kvd-k8aoH" class="btn btn-mac" target="_blank">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན།</span>
                 喜马拉雅 >> 班智达 下载
             </a>
-            <a href="https://www.123865.com/s/wu2Kvd-BDaoH" class="btn" style="background:#34495e;" target="_blank">
+            <a href="https://www.123865.com/s/wu2Kvd-o8aoH" class="btn btn-mac" target="_blank">
                 <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན།</span>
                 班智达 >> 喜马拉雅 下载
             </a>
@@ -151,47 +159,41 @@
                     <strong>macOS ནང་མཉེན་ཆས་སྒྲིག་འཇུག་ལམ་སྟོན།</strong><br><br>
                     <span class="step-title">༡ ༽    རྒྱུན་ལྡན་སྒྲིག་འཇུག</span>
                     .dmg ཡིག་ཆ་ཁ་ཕྱེས་རྗེས་མཉེན་ཆས་དེ་ Applications (མཉེན་ཆས་སྒྲིག་འཇུག་གནས་ས་) ནང་ལ་འདྲུད་དགོས།<br><br>
-                    <span class="step-title">༢ ༽    བཀོལ་སྤྱོད་ཆོག་མཆན་སྤྲོད་པ། (གལ་ཆེ།)</span>
-                    macOS ཡིས་“མཉེན་ཆས་འདི་ནི་ངོ་རྟགས་མ་ཆོད་པའི་གསར་སྤེལ་བ་ལས་བྱུང་བ”ཞེས་བརྡ་ལན་སྤྲོད་སྲིད། འདི་ནི་མཉེན་ཆས་ཀྱི་བདེ་འཇགས་གནད་དོན་མིན་པས་གཤམ་གྱི་གོམ་པ་ལྟར་བཀོལ་སྤྱོད་གནང་རོགས།<br>
-                    ·བརྡ་ལན་ཁ་ཕྱེ་བ། མཉེན་ཆས་ཁ་ཕྱེ་སྐབས་ཉེན་བརྡ་བཏང་ན། [OK] འམ་ [Cancel] གནོན་རོགས།<br>
-                    ·སྒྲིག་བཅོས་ཁ་ཕྱེ་བ། གློག་ཀླད་གཡོན་སྒང་གི་ () -> [系统设置] -> [隐私与安全性] ནང་ལ་འཛུལ་དགོས།<br>
-                    ·ཆོག་མཆན་སྤྲོད་པ། ཤོག་ངོས་ཀྱི་འོག་ཏུ་ནུར་ཏེ་ "Open Anyway" (仍要打开) ཞེས་པ་དེར་ནོན།<br>
-                    ·གསང་གྲངས་འཇུག་པ། གློག་ཀླད་ཀྱི་གསང་གྲངས་ (开机密码) བཅུག་ནས་གཏན་འཁེལ་བྱས་རྗེས་མཉེན་ཆས་ཁ་ཕྱེ་ཐུབ།<br><br>
-                    <span class="step-title">༣ ༽    གནད་དོན་ཐག་གཅོད་བྱེད་ཐབས་གཞན་པ།</span>
-                    གལ་ཏེ་ད་དུང་མཉེན་ཆས་ཁ་ཕྱེ་མ་ཐུབ་ན། [Terminal] ཁ་ཕྱེ་ནས་གཤམ་གྱི་བཀའ་བརྡ་འདི་བཅུག་རོགས།  sudo xattr -rd com.apple.quarantine <br>
-                    (དོ་སྣང་བྱེད་དགོས་པ་ནི་ quarantine ཡི་རྗེས་སུ་བར་སྟོང་གཅིག་བཞག་ནས་མཉེན་ཆས་ཀྱི་རྟགས་རིས་དེ་འདིའི་ནང་ལ་འདྲུད་དགོས།)
+                    <span class="step-title">༢ ༽    ཐད་ཀར་ཁ་ཕྱེ་ནས་བཀོལ་སྤྱོད།</span>
+                    མཉེན་ཆས་འདི་ངོ་རྟགས་བརྟན་པོར་བྱས་ཟིན་པས། Applications ནང་དུ་འཇུག་རྗེས་ཐད་ཀར་ཁ་ཕྱེས་ནས་བཀོལ་ཆོག། (Launchpad ནང་ནས་སམ་ Applications ནང་ནས།)<br><br>
+                    <span class="step-title">༣ ༽    གལ་སྲིད་བཀག་སྡོམ་བྱས་ཚེ།</span>
+                    () -> [系统设置] -> [隐私与安全性] ནང་དུ་འཛུལ་ནས། "Open Anyway" (仍要打开) ལ་ནོན་པ་དང་། གསང་གྲངས་བཅུག་ནས་གཏན་འཁེལ་བྱས་རྗེས་མཉེན་ཆས་ཁ་ཕྱེ་ཐུབ།<br><br>
+                    <span class="step-title">༤ ༽    མཐར་ཐུག་ཐབས་ལམ།</span>
+                    ད་དུང་མ་ཐུབ་ན། [Terminal] ཁ་ཕྱེ་ནས་གཤམ་གྱི་བཀའ་བརྡ་འདི་བཅུག་རོགས། sudo xattr -rd com.apple.quarantine <br>
+                    (quarantine ཡི་རྗེས་སུ་བར་སྟོང་གཅིག་བཞག་ནས་ Applications ནང་གི་མཉེན་ཆས་དེ་ཐད་ཀར་འདྲུད་རོགས།)
                 </div>
                 <div class="lang-column lang-chinese">
                     <strong>macOS 软件安装运行指南</strong><br><br>
                     <span class="step-title">一、 正常安装</span>
                     打开 .dmg 镜像文件后，将软件图标拖入 Applications (应用程序) 文件夹。<br><br>
-                    <span class="step-title">二、 授权运行 (核心步骤)</span>
-                    由于软件未上架 App Store，系统会提示“无法验证开发者”，请按以下步骤手动授权：<br>
-                    ·先报错： 双击软件弹出警告框后，点击“好”或“取消”。<br>
-                    ·进设置： 点击屏幕左上角 () -> [系统设置] -> [隐私与安全性]。<br>
-                    ·点授权： 向下滑动找到“安全性”栏目，点击 “仍要打开 (Open Anyway)” 按钮。<br>
-                    ·输密码： 输入您的开机密码并确认，软件即可正常运行。<br><br>
-                    <span class="step-title">三、 终极方案 (若提示“已损坏”或“无法打开”)</span>
-                    如果上述操作无效，请使用终端命令解除限制：<br>
-                    打开 [终端 (Terminal)]。<br>
-                    输入命令：sudo xattr -rd com.apple.quarantine  (注意末尾有一个空格)。<br>
-                    将应用程序文件夹里的软件图标直接拖入终端窗口。<br>
-                    按下回车键，并输入开机密码（输入时不显示字符）后回车即可。
+                    <span class="step-title">二、 直接打开</span>
+                    本软件已完成签名验证，拖入 Applications 后，通常可直接从 Launchpad 或“应用程序”文件夹打开使用。<br><br>
+                    <span class="step-title">三、 若系统仍阻止打开</span>
+                    请到 () -> [系统设置] -> [隐私与安全性]，在页面底部找到 “仍要打开 (Open Anyway)” 并确认一次，输入开机密码后即可正常运行。<br><br>
+                    <span class="step-title">四、 终极方案 (极少数情况)</span>
+                    若仍提示“已损坏/无法打开”，可用终端解除隔离：<br>
+                    打开 [终端 (Terminal)]，输入：sudo xattr -rd com.apple.quarantine  (末尾留一个空格)。<br>
+                    将 Applications 里的软件图标直接拖入终端窗口，回车后输入开机密码并回车即可。
                 </div>
             </div>
         </details>
     </div>
 
-    <div class="card">
+    <div class="card platform-card">
         <span class="tibet-header">Windows སྒེའུ་ཁུང་མ་ལག་སྟེང་སྤྱོད་ཆོག་པའི་མཉེན་ཆས། </span>
-        <h2>💻 Windows 电脑版 (64位)</h2>
+        <h2>💻 Windows 电脑版（64位通用）</h2>
         <div class="platform-info">Intel དང་ AMD ཡོངས་ལ་སྤྱོད་ཆོག / 适用：64位 英特尔(Intel) / AMD 通用</div>
         <div class="btn-group">
-            <a href="https://www.123865.com/s/wu2Kvd-fDaoH" class="btn" target="_blank">
+            <a href="https://www.123865.com/s/wu2Kvd-Q8aoH" class="btn btn-win" target="_blank">
                 <span>ཧི་མ་ལ་ཡ། >> པནྜི་ཏ།  ཕབ་ལེན། (ZIP)</span>
                 喜马拉雅 >> 班智达 下载
             </a>
-            <a href="https://www.123865.com/s/wu2Kvd-pDaoH" class="btn" target="_blank">
+            <a href="https://www.123865.com/s/wu2Kvd-E8aoH" class="btn btn-win" target="_blank">
                 <span>པནྜི་ཏ། >> ཧི་མ་ལ་ཡ།  ཕབ་ལེན། (ZIP)</span>
                 班智达 >> 喜马拉雅 下载
             </a>
@@ -222,7 +224,7 @@
         </details>
     </div>
 
-    <div class="card" style="text-align: left; background-color: #fff5f5; border: 1px solid #feb2b2;">
+    <div class="card disclaimer-card" style="text-align: left; background-color: #fff5f5;">
         <div class="tutorial-container" style="background: transparent; padding: 0; border-top:none;">
             <div class="lang-column lang-tibet" style="color: #742a2a; border-right: 1px solid #feb2b2;">
                 <strong>འགན་སེལ་གསལ་བཤད།</strong><br>
